@@ -1,14 +1,14 @@
-// 建立 Counter 元件
+//繼承HTMLElement 建立一個新的類別
 class Counter extends HTMLElement {
   constructor() {
     super();
 
     this.value = 0;
 
-    // 建立 Shadow DOM
+    // 創建 Shadow Root，封裝樣式和結構
     this.attachShadow({ mode: 'open' });
 
-    // 定義模板
+    // 定義template
     const template = document.createElement('template');
     template.innerHTML = `
       <style>
@@ -85,4 +85,6 @@ class Counter extends HTMLElement {
   }
 }
 
+//註冊自定義的HTML element
+//第一個參數為自己命名的HTML tag 名稱， 名稱中間需有-，用來區別原生tag
 customElements.define('my-counter', Counter);
