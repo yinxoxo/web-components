@@ -2,12 +2,13 @@
 class Counter extends HTMLElement {
   constructor() {
     super();
-
     this.value = 0;
 
+    /* TO DO */ 
     // 創建 Shadow Root，封裝樣式和結構
     this.attachShadow({ mode: 'open' });
 
+    /* TO DO */
     // 定義template
     const template = document.createElement('template');
     template.innerHTML = `
@@ -58,7 +59,8 @@ class Counter extends HTMLElement {
       </div>
     `;
 
-    // 將模板內容添加到 Shadow DOM
+    /* TO DO */
+    // 將模板內容clone後插入到 Shadow DOM
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
     this.shadowRoot
@@ -85,6 +87,7 @@ class Counter extends HTMLElement {
   }
 }
 
+
+/* TO DO */ 
 //註冊自定義的HTML element
-//第一個參數為自己命名的HTML tag 名稱， 名稱中間需有-，用來區別原生tag
 customElements.define('my-counter', Counter);
